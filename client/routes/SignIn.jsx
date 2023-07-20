@@ -4,9 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { StoreContext } from './dataStore.js';
 
-import womanImg from '../assets/woman.jpg';
 import backgrounds from '../components/Backgrounds.js';
-
 
 const SignIn = () => {
   const nav = useNavigate();
@@ -92,25 +90,31 @@ const SignIn = () => {
       headers: {
         'Content-Type': 'application/json',
       },
-      });
-       if(res.ok) {
-        setIsSignUp(false);
-        setUser('');
-        setPassword('');
-       }
-       else{
-        alert('Cannot leave inputs blank, please enter required new account information.')
-       }
-    };
+    });
+    if (res.ok) {
+      setIsSignUp(false);
+      setUser('');
+      setPassword('');
+    } else {
+      alert(
+        'Cannot leave inputs blank, please enter required new account information.'
+      );
+    }
+  }
 
   //use inputValue to fetch for user database
   return (
-    <div className="signin-container" style={{ backgroundImage: `url(${womanImg})` }}>
+    <div
+      className="signin-container"
+      style={{ backgroundImage: `url('${backgrounds.signIn[palette]}')` }}
+    >
       <div className="signin-form">
         <form className="signup-textbox" onSubmit={handleSubmit}>
           {isSignUp && (
             <div>
-              <label htmlFor="email" className="off-center-label">Email:</label>
+              <label htmlFor="email" className="off-center-label">
+                Email:
+              </label>
               <input
                 type="text"
                 id="email"
@@ -118,46 +122,52 @@ const SignIn = () => {
                 onChange={handleEmailChange}
               />
             </div>
-            )}
-            {isSignUp && (
-              <div>
-                <label htmlFor="name" className="off-center-label">Display Name:</label>
-                <input
-                  type="text"
-                  id="name"
-                  value={name}
-                  onChange={handleNameChange}
-                />
-              </div>
-            )}
+          )}
+          {isSignUp && (
             <div>
-                <label htmlFor="username" className="off-center-label">Username:</label>
-                <input
-                  type="text"
-                  id="username"
-                  value={username}
-                  onChange={handleUserChange}
-                />
-            </div>
-            <div>
-              <label htmlFor="password" className="off-center-label">Password:</label>
+              <label htmlFor="name" className="off-center-label">
+                Display Name:
+              </label>
               <input
                 type="text"
-                id="password"
-                value={password}
-                onChange={handlePwChange}
+                id="name"
+                value={name}
+                onChange={handleNameChange}
               />
             </div>
+          )}
+          <div>
+            <label htmlFor="username" className="off-center-label">
+              Username:
+            </label>
+            <input
+              type="text"
+              id="username"
+              value={username}
+              onChange={handleUserChange}
+            />
+          </div>
+          <div>
+            <label htmlFor="password" className="off-center-label">
+              Password:
+            </label>
+            <input
+              type="text"
+              id="password"
+              value={password}
+              onChange={handlePwChange}
+            />
+          </div>
           <button className="button" onClick={handleSubmit}>
             {isSignUp ? 'Sign Up!' : 'Sign In!'}
           </button>
         </form>
         <br />
         {!isSignUp && (
-          <div className = "new-account-text">
+          <div className="new-account-text">
             <p className="off-center-label">
-                Don't have an account?
-              <br/>
+              Don't have an account?
+              <br />
             </p>
             <button className="button" onClick={() => setIsSignUp(true)}>
               Sign Up Here
