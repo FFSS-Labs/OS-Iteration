@@ -18,10 +18,10 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.put('/:pieceId', piecesController.updateFields, async (req, res) => {
-  console.log('fields updated');
-  res.status(200).json(res.locals.result);
-});
+// router.put('/:pieceId', piecesController.updateFields, async (req, res) => {
+//   console.log('fields updated');
+//   res.status(200).json(res.locals.result);
+// });
 
 router.post('/', piecesController.createArt, async (req, res) => {
   try {
