@@ -162,16 +162,25 @@ $btnrad: 70px;
     }
   }
 
-  .off-center-label input {
-    margin-left: 0px;
-  }
   .signin-container {
+    background-size: cover;
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 
+    .button {
+      border: solid;
+      border-width: 1px;
+      size: small;
+      background-color: rgba(224, 205, 218, 0.241);
+      border-color: gray;
+    }
     .signup-textbox {
+      background-color: rgba(255, 255, 255, 0.65);
+      box-shadow: 5px 5px 10px;
+      padding: 6px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -192,14 +201,22 @@ $btnrad: 70px;
       display: inline-block;
       width: 100px;
     }
-
+    .off-center-label {
+      font-size: 16px;
+      font-style: italic;
+      font-weight: bold;
+    }
     .new-account-text {
+      background-color: rgba(255, 255, 255, 0.65);
+      box-shadow: 5px 5px 10px;
+      padding: 6px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
       margin-top: 120%;
+
 
       .new-account-text button {
         display: block;
@@ -208,6 +225,7 @@ $btnrad: 70px;
       }
 
       .new-account-text p {
+        font-size: 20px;
         justify-content: center;
         align-items: center;
         display: flex;
