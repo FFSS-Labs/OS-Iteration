@@ -4,9 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { StoreContext } from './dataStore.js';
 
-import womanImg from '../assets/woman.jpg';
 import backgrounds from '../components/Backgrounds.js';
-
 
 const SignIn = () => {
   const nav = useNavigate();
@@ -105,7 +103,7 @@ const SignIn = () => {
 
   //use inputValue to fetch for user database
   return (
-    <div className="signin-container" style={{ backgroundImage: `url(${womanImg})` }}>
+    <div className="signin-container">
       <div className="signin-form">
         <form className="signup-textbox" onSubmit={handleSubmit}>
           {isSignUp && (
