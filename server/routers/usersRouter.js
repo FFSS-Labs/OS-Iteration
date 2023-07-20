@@ -24,20 +24,24 @@ router.post(
   '/create',
   // authController.userSignup,
   usersController.createUser, //creates a user
-  cookieController.setSSIDCookie, //sets SSID cookie during signup
-  sessionController.startSession,
+  // cookieController.setSSIDCookie, 
+  // sessionController.startSession,
   (req, res) => {
+    console.log('After user creater')
+    console.log('User Created!');
     return res.status(200).json(res.locals.newUser);
   }
 );
+
 // myObjectId = ObjectId('507c7f79bcf86cd7994f6c0e');
 // myObjectIdString = myObjectId.toString();
+
 router.post(
   '/login',
-  cookieController.setCookie,
-  sessionController.startSession,
   usersController.getUser,
   (req, res) => {
+    console.log(res.locals.foundUser);
+    if(res.locals.foundUser === null) return res.status(401).json('No user found! Wrong username or password.')
     const userId = res.locals.foundUser._id.toString();
     return res.status(200).json(userId);
   }
