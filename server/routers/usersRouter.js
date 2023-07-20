@@ -43,6 +43,11 @@ router.post(
   }
 );
 
+router.put('/updateFaves', usersController.updateFaves, (req, res) => {
+  console.log('Favorites successfully updated');
+  return res.status(200);
+});
+
 // router.put(
 //   '/updateFaves',
 //   cookieController.setCookie,

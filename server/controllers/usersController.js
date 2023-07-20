@@ -60,12 +60,13 @@ usersController.createUser = async (req, res, next) => {
   }
 };
 
-// usersController.updateFaves = async(req, res, next) => {
-// try{
-//const { }
-
-// }
-// };
+usersController.updateFaves = async (req, res, next) => {
+  try {
+    const { favorites, user } = req.body;
+    console.log('req.body:', req.body);
+    // const updateFaves = await User.find({'_id, ' })
+  } catch (err) {}
+};
 
 // dbController.updateUser = async (req, res, next) => {
 //   try {
