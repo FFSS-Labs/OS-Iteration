@@ -4,6 +4,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import Gallery from '../components/Gallery.jsx';
 import FilterButtons from '../components/FilterButtons.jsx';
 import { StoreContext } from './dataStore.js';
+import Focus from '../components/Focus.jsx';
+import FocusBackground from '../components/FocusBackground.jsx';
 
 // import fakeData from '../components/Placeholder.jsx';
 
@@ -87,6 +89,7 @@ const Home = () => {
     console.log('Current clases: ', appContainer.classList);
   }, [pallet]);
 
+
   return (
     <div className="base-container">
       <div className="header-container">
@@ -138,6 +141,8 @@ const Home = () => {
       <button onClick={() => nav('signin', { state: 'data' })}>
         Sign in here!
       </button> */}
+      <FocusBackground />
+      <Focus />
     </div>
   );
 };

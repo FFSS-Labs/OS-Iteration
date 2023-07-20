@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Gallery from '../components/Gallery.jsx';
 import fakeData from '../components/Placeholder.jsx';
 import UploadWidget from '../components/UploadWidget.jsx';
+import brush from '../assets/pxfuel.jpg';
 
 export default function AddPiece(props) {
   const emptyForm = {
@@ -86,7 +87,7 @@ export default function AddPiece(props) {
   // updateFullPieceList (  pieceListParsedFromServerBackend);
 
   return (
-    <div className="form-container">
+    <div className="form-container" style ={ { background: `center  no-repeat url('${brush}')`, backgroundSize: 'cover'}}>
       <div className="form-contents">
         <h2>Upload a New Piece</h2>
         <hr />
@@ -212,9 +213,9 @@ export default function AddPiece(props) {
           <button className="addPieceSubmit">Submit</button>
         </form>
       </div>
-      {/* <div id="imgContainer">
-        <img src={formData.image} />
-      </div> */}
+        <div id="imgContainer">
+          <img style={{maxWidth: "600px"}} src={formData.image} />
+        </div>
     </div>
   );
 }
