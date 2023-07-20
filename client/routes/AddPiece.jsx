@@ -88,7 +88,7 @@ export default function AddPiece(props) {
   // updateFullPieceList (  pieceListParsedFromServerBackend);
 
   return (
-    <div className="form-container" style ={ { background: `center  no-repeat url('${brush}')`, backgroundSize: 'cover'}}>
+    <div className="form-container" >
       <div className="form-contents">
         <h2>Upload a New Piece</h2>
         <hr />

@@ -142,7 +142,7 @@ const Home = () => {
         >
           <i className="bi bi-palette-fill" />
         </button>
-        <h1>Stork Art Fair</h1>
+        <h1 className='homeTitle'>Stork Art Fair</h1>
         <div>
           {activeUser ? (
             <button
