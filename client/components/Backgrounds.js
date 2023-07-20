@@ -1,23 +1,11 @@
 // Background Arrays per palette
+
+import home0 from '../assets/simple-white.jpg';
+
 const bg = {
-  home: [
-    '',
-    'https://e0.pxfuel.com/wallpapers/793/372/desktop-wallpaper-painting-abstract-abstract-expressionism-abstract-painting-acrylic-acrylic-paint-art-canvas-contemporary-art-design-expressionism-modern-art-painting-wal-dengan-gambar.jpg',
-    '',
-    '',
-  ],
-  signIn: [
-    '',
-    'https://images.pexels.com/photos/1070534/pexels-photo-1070534.jpeg',
-    '',
-    '',
-  ],
-  addPiece: [
-    '',
-    'https://e0.pxfuel.com/wallpapers/226/72/desktop-wallpaper-abstract-expressionism-abstract-painting-acrylic-paint-acrylic-paint.jpg',
-    '',
-    '',
-  ],
+  home: [home0, home0, home0, home0],
+  signIn: [home0, home0, home0, home0],
+  addPiece: [home0, home0, home0, home0],
 };
 
 export default bg;
