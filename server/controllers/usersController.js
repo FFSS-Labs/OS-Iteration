@@ -65,16 +65,18 @@ usersController.createUser = async (req, res, next) => {
 };
 
 usersController.updateFaves = async (req, res, next) => {
+  //find active User ID
   try {
     const { favorites, user } = req.body;
     console.log('req.body:', req.body);
-    const userId = user._id;
-    console.log('userId:req.body.user._id');
+    const userId = JSON.stringify(user._id);
+    console.log('userId:', req.body.user._id);
     // const favId = pieces_id;
     // console.log('pieces_id:' pieces_id);
-    console.log('favId:', favId);
+    // console.log('favId:', favId);
+
     const updateFaves = await User.findOneAndUpdate(
-      { _id: userId },
+      { userId },
       { favorites: favorites },
       { new: true }
     );
