@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+
 const Piece = ({ pieceData }) => {
   const clickHandler = (e) => {
     console.log('Clicked by ', e.target);

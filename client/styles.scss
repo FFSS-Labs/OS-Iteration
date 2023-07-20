@@ -276,13 +276,14 @@ $btnrad: 70px;
 
 #app-container.pallet3 {
   @extend #app-container;
-  --b-color: rgba(20, 20, 20,.8);
-  --b-color-light: rgba(80, 80, 80,.7);
+  --b-color: rgba(20, 20, 20, 0.8);
+  --b-color-light: rgba(80, 80, 80, 0.7);
   --container-color: rgba(220, 220, 220, 0.8);
 }
 
 //^ AddPieces - Upload image and Piece details page
-html, body {
+html,
+body {
   margin: 0;
 }
 
@@ -308,12 +309,49 @@ html, body {
   border: 10px solid red($color: #cc0000);
 }
 
+.focusContainer {
+  background-color: transparent;
+  border: none;
+  animation: slow-load-in 1s ease-in-out;
+}
+
+.focusImg {
+  box-shadow: 0 0 50px rgb(0, 0, 0);
+}
+
+.blur {
+  animation: slow-load-in 1s linear;
+}
+
+// .pieceInfoContainer {
+//   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+// }
+
 @keyframes fly-in-right {
   from {
     transform: translateX(360px);
   }
   to {
     transform: translateX(0);
+  }
+}
+
+@keyframes slow-load-in {
+  from {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+  from {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
   }
 }
 
