@@ -8,9 +8,9 @@ import home2 from '../assets/bamboo.jpeg';
 
 const bg = {
 
-  home: [home0, home0, home0, home3],
-  signIn: [home0, home0, home0, sign3],
-  addPiece: [home0, home0, home0,add3],
+  home: [home0, home0, home2, home3],
+  signIn: [home0, home0, home2, sign3],
+  addPiece: [home0, home0, home2,add3],
 };
 
 export default bg;
