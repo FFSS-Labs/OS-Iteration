@@ -379,6 +379,49 @@ $fontpick: 'Merriweather', serif;
     left: 50%;
     transform: translate(-50%, 120%);
     box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.3);
+    .pieceInfo {
+      width: 98%;
+      height: 94%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+      h3,
+      h4,
+      a,
+      span,
+      div,
+      p {
+        margin: 0px;
+      }
+      .pieceInfo-top {
+        width: 100%;
+        height: 30%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin: 0px;
+        .bn-box {
+          display: flex;
+          justify-content: flex-end;
+        }
+        .btn-group {
+          margin: 0px;
+          width: 40%;
+
+          a {
+            text-align: right;
+            margin: 0px;
+            padding: 5px;
+          }
+        }
+      }
+      .pieceInfo-bottom {
+        margin: 0px;
+        width: 100%;
+        height: 60%;
+      }
+    }
   }
 
   @keyframes fly-in-right {
