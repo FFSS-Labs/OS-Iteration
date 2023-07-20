@@ -3,7 +3,10 @@ import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { StoreContext } from './dataStore.js';
+
+import womanImg from '../assets/woman.jpg';
 import backgrounds from '../components/Backgrounds.js';
+
 
 const SignIn = () => {
   const nav = useNavigate();
@@ -102,12 +105,12 @@ const SignIn = () => {
 
   //use inputValue to fetch for user database
   return (
-    <div className="signin-container">
+    <div className="signin-container" style={{ backgroundImage: `url(${womanImg})` }}>
       <div className="signin-form">
         <form className="signup-textbox" onSubmit={handleSubmit}>
           {isSignUp && (
             <div>
-              <label htmlFor="email">Email:</label>
+              <label htmlFor="email" className="off-center-label">Email:</label>
               <input
                 type="text"
                 id="email"
@@ -118,7 +121,7 @@ const SignIn = () => {
             )}
             {isSignUp && (
               <div>
-                <label htmlFor="name">Display Name:</label>
+                <label htmlFor="name" className="off-center-label">Display Name:</label>
                 <input
                   type="text"
                   id="name"
@@ -152,7 +155,7 @@ const SignIn = () => {
         <br />
         {!isSignUp && (
           <div className = "new-account-text">
-            <p>
+            <p className="off-center-label">
                 Don't have an account?
               <br/>
             </p>
