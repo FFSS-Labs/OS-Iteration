@@ -6,7 +6,7 @@ import { StoreContext } from '../routes/dataStore.js';
 // Gallery drills pieceList prop
 const Gallery = ({ pieceList }) => {
   const [pieceViews, setPieceViews] = useState([]);
-  const { userList, setUserList, activeUser, userFaves, setUserFaves } =
+  const { userList, setUserList, activeUser, userFaves, setUserFaves, setFocusPieceFilterIndex } =
     useContext(StoreContext);
 
   useEffect(() => {
@@ -19,6 +19,7 @@ const Gallery = ({ pieceList }) => {
         <Piece
           pieceData={pieceCopy}
           pieceIndex={index}
+          setFocusPieceFilterIndex={setFocusPieceFilterIndex}
           isFaved={isFaved}
           setFave={setFave}
           key={element._id}

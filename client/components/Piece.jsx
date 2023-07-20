@@ -1,11 +1,22 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-
-const Piece = ({ pieceData, setFave, pieceIndex, isFaved }) => {
+const Piece = ({
+  pieceData,
+  setFave,
+  pieceIndex,
+  isFaved,
+  setFocusPieceFilterIndex,
+}) => {
   const clickHandler = (e) => {
     // console.log('Clicked by ', e.target.id);
     setFave(e.target.id.slice(1), !isFaved);
+  };
+
+  const focus = (e) => {
+    const focusIndex = e.target.id.slice(3);
+    console.log('Setting Focus Index to', focusIndex);
+    setFocusPieceFilterIndex(focusIndex);
   };
 
   return (
@@ -20,7 +31,12 @@ const Piece = ({ pieceData, setFave, pieceIndex, isFaved }) => {
       className="piece-container"
     >
       <div className="piece-image-container">
-        <img src={pieceData.image} className="piece-image" />
+        <img
+          src={pieceData.image}
+          className="piece-image"
+          id={'pic' + pieceData._id}
+          onClick={focus}
+        />
       </div>
       <div className="piece-content">
         <div className="piece-text">

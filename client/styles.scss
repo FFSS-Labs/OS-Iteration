@@ -47,7 +47,7 @@ $btnrad: 70px;
   }
   .add-piece {
   }
-  
+
   .placeholder {
     margin: 20px;
     height: $btnrad;
@@ -276,24 +276,105 @@ $btnrad: 70px;
     color: white;
     background-color: var(--b-color);
   }
-  // .button-icon {
-  //   height: 35px;
-  //   width: auto;
-  // }
-
-  // .button.big {
-  //   width: 110px;
-  //   border-radius: 8px;
-  //   padding: 10px;
-  //   margin-left: 10px;
-  //   margin-right: 10px;
-  //   margin-bottom: 10px;
-  //   font-size: 16px;
-  // }
 
   a.filter:hover {
     background-color: var(--b-color-light);
     cursor: default;
+  }
+
+  //^ AddPieces - Upload image and Piece details page
+  html,
+  body {
+    margin: 0;
+  }
+
+  .form-container {
+    margin: 0;
+    padding: 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    justify-content: space-around;
+    align-items: center;
+    animation: fly-in-right 3s;
+    text-align: center;
+  }
+
+  .form-contents {
+    max-width: 500px;
+    background-color: rgba(255, 255, 255, 0.517);
+    border-radius: 24px;
+  }
+
+  .imageContainer {
+    max-width: 80%;
+    border: 10px solid red($color: #cc0000);
+  }
+
+  .focusContainer {
+    background-color: transparent;
+    border: none;
+  }
+
+  .focusImg {
+    max-height: 70%;
+    width: auto;
+    max-width: 80%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -65%);
+    box-shadow: 0 0 50px rgb(0, 0, 0);
+    // animation: slow-load-in 0.4s ease-in-out;
+  }
+
+  .blur {
+    animation: slow-load-in 0.2s linear;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px) brightness(15%);
+    opacity: 0.9;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 5;
+  }
+
+  .pieceInfoContainer {
+    height: 15%;
+    width: 30%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 120%);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  @keyframes fly-in-right {
+    from {
+      transform: translateX(360px);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slow-load-in {
+    from {
+      opacity: 0;
+      transform: translateX(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+    from {
+      opacity: 0;
+      transform: translateX(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0px);
+    }
   }
 }
 
@@ -326,81 +407,3 @@ $btnrad: 70px;
   --b-color-light: rgba(80, 80, 80, 0.7);
   --container-color: rgba(220, 220, 220, 0.8);
 }
-
-//^ AddPieces - Upload image and Piece details page
-html,
-body {
-  margin: 0;
-}
-
-.form-container {
-  margin: 0;
-  padding: 100px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  justify-content: space-around;
-  align-items: center;
-  animation: fly-in-right 3s;
-  text-align: center;
-}
-
-.form-contents {
-  max-width: 500px;
-  background-color: rgba(255, 255, 255, 0.517);
-  border-radius: 24px;
-}
-
-.imageContainer {
-  max-width: 80%;
-  border: 10px solid red($color: #cc0000);
-}
-
-.focusContainer {
-  background-color: transparent;
-  border: none;
-  animation: slow-load-in 1s ease-in-out;
-}
-
-.focusImg {
-  box-shadow: 0 0 50px rgb(0, 0, 0);
-}
-
-.blur {
-  animation: slow-load-in 1s linear;
-}
-
-// .pieceInfoContainer {
-//   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
-// }
-
-@keyframes fly-in-right {
-  from {
-    transform: translateX(360px);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-
-@keyframes slow-load-in {
-  from {
-    opacity: 0;
-    transform: translateX(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0px);
-  }
-  from {
-    opacity: 0;
-    transform: translateX(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0px);
-  }
-}
-
-// body {
-//   background: url('https://e0.pxfuel.com/wallpapers/325/434/desktop-wallpaper-abstract-brush-strokes-paint-brush-strokes.jpg') no-repeat center;
-// }

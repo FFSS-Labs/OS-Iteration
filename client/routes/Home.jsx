@@ -1,5 +1,5 @@
 // Imports
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Gallery from '../components/Gallery.jsx';
 import FilterButtons from '../components/FilterButtons.jsx';
@@ -28,12 +28,34 @@ const Home = () => {
     numberOfPalettes,
     updateFavorites,
     pushFavorites,
+    focusPieceFilterIndex,
   } = useContext(StoreContext); // destructure dataStore vars for use
+
+  // const [focusView, setFocusView] = useState([]);
 
   useEffect(() => {
     // palette -> update background
     document.body.style.backgroundImage = `url('${backgrounds.home[palette]}')`;
   }, [palette]);
+
+  // useEffect(() => {
+  //   if (focusPieceFilterIndex !== undefined) {
+  //     newFocusViews = [];
+  //     console.log(
+  //       'index',
+  //       focusPieceFilterIndex,
+  //       'value',
+  //       filteredPieceList[focusPieceFilterIndex]
+  //     );
+  //     const newFocusView = (
+  //       <Focus pieceData={filteredPieceList[focusPieceFilterIndex]} />
+  //     );
+  //     newFocusViews.push(newFocusView);
+  //     setFocusView(newFocusViews);
+  //   } else {
+  //     setFocusView([]);
+  //   }
+  // }, [focusPieceFilterIndex]);
 
   // useEffect(() => {
   //   // mod user list (new, fav-changes) -> update current faves
@@ -97,17 +119,18 @@ const Home = () => {
 
   const nextPalette = () => {
     const newPalette = palette > numberOfPalettes - 2 ? 0 : palette + 1;
+    // console.log('Increasing palettes', palette, newPalette);
     setPalette(newPalette);
   };
 
   useEffect(() => {
     const appContainer = document.getElementById('app-container');
     for (let i = 0; i < numberOfPalettes; i++) {
-      appContainer.classList.remove('pal' + i);
+      appContainer.classList.remove('palette' + i);
     }
     appContainer.classList.add('palette' + palette);
-    console.log('Current clases: ', appContainer.classList);
-  }, [pallet]);
+    // console.log('Current clases: ', appContainer.classList);
+  }, [palette]);
 
   return (
     <div className="base-container">
@@ -152,8 +175,8 @@ const Home = () => {
       <button onClick={() => nav('signin', { state: 'data' })}>
         Sign in here!
       </button> */}
-      <FocusBackground />
-      <Focus />
+      {focusPieceFilterIndex !== undefined && <FocusBackground />}
+      {focusPieceFilterIndex !== undefined && <Focus />}
     </div>
   );
 };
