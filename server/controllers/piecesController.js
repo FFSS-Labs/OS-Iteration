@@ -127,23 +127,23 @@ piecesController.updateArt = async (req, res, next) => {
   }
 };
 
-piecesController.updateFields = async (req, res, next) => {
-  try {
-    console.log('Entering pieces controller try block');
-    const { description, forSale, price } = req.params;
-    console.log('req.params:', req.params);
-    const allFields = await Art.findOneandUpdate(
-      {},
-      { description, forSale, price }
-    );
-    console.log('res.locals.allFields:', res.locals.allFields);
-    const result = res.locals.allFields[allFields];
-    console.log('result:', result);
-    return res.status(200).json(result);
-  } catch (err) {
-    return `Error in putting updatable data: ${err}`;
-  }
-};
+// piecesController.updateFields = async (req, res, next) => {
+//   try {
+//     console.log('Entering pieces controller try block');
+//     const { description, forSale, price } = req.params;
+//     console.log('req.params:', req.params);
+//     const allFields = await Art.findOneandUpdate(
+//       {},
+//       { description, forSale, price }
+//     );
+//     console.log('res.locals.allFields:', res.locals.allFields);
+//     const result = res.locals.allFields[allFields];
+//     console.log('result:', result);
+//     return res.status(200).json(result);
+//   } catch (err) {
+//     return `Error in putting updatable data: ${err}`;
+//   }
+// };
 
 piecesController.deleteArt = async (req, res, next) => {
   // const { name } = req.params;

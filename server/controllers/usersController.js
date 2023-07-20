@@ -66,12 +66,34 @@ usersController.createUser = async (req, res, next) => {
   }
 };
 
-// usersController.updateFaves = async(req, res, next) => {
-// try{
-//const { }
+usersController.updateFaves = async (req, res, next) => {
+  //find active User ID
+  try {
+    const { favorites, user } = req.body;
+    console.log('req.body:', req.body);
+    const userId = JSON.stringify(user._id);
+    console.log('userId:', req.body.user._id);
+    // const favId = pieces_id;
+    // console.log('pieces_id:' pieces_id);
+    // console.log('favId:', favId);
 
-// }
-// };
+    const updateFaves = await User.findOneAndUpdate(
+      { userId },
+      { favorites: favorites },
+      { new: true }
+    );
+    if (!updateFaves) {
+      return res.status(404).json({ error: 'User not found' });
+    }
+    res.json({ message: 'Favorites updated successfully', user: updateFaves });
+  } catch (err) {
+    return next({
+      log: `The following error occured: ${err}`,
+      status: 400,
+      message: { err: 'An error occured while trying to create a user' },
+    });
+  }
+};
 
 // dbController.updateUser = async (req, res, next) => {
 //   try {
