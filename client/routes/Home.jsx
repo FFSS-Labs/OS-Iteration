@@ -142,7 +142,11 @@ const Home = () => {
         >
           <i className="bi bi-palette-fill" />
         </button>
+
+        <h1 className = "homeHeader" style={{fontFamily: "Tangerine"}}>The Stork Art Galleria</h1>
+
         <h1 className='homeTitle'>Stork Art Fair</h1>
+
         <div>
           {activeUser ? (
             <button
