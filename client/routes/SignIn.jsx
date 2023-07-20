@@ -4,9 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { StoreContext } from './dataStore.js';
 
-import womanImg from '../assets/woman.jpg';
 import backgrounds from '../components/Backgrounds.js';
->>>>>>>>> Temporary merge branch 2
 
 const SignIn = () => {
   const nav = useNavigate();
