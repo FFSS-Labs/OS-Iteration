@@ -63,16 +63,14 @@ const FocusContainer = styled.div`
 `;
 
 const FocusTag = styled.div`
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
   border-radius: 1rem;
   border: none;
-  padding: 1rem;
   background-color: white;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
   justify-content: space-between;
-  z-index: 10;
+  z-index: 15;
 `;
 
 export default Focus;
