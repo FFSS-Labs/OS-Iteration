@@ -4,9 +4,18 @@ import Gallery from './Gallery.jsx';
 import { StoreContext } from '../routes/dataStore.js';
 
 const Focus = () => {
-  const { focusPieceFilterIndex, filteredPieceList } = useContext(StoreContext);
-  const pieceData = filteredPieceList.find(el=>el._id===focusPieceFilterIndex);
+  const { focusPieceFilterIndex, filteredPieceList, userList } =
+    useContext(StoreContext);
+  const pieceData = filteredPieceList.find(
+    (el) => el._id === focusPieceFilterIndex
+  );
   console.log(pieceData);
+
+  const contactSeller = () => {
+    const sellerId = pieceData.ownerId;
+    const seller = userList.find((e) => e._id === sellerId);
+    window.location.href = `mailto:${seller.email}`;
+  };
 
   return (
     <>
@@ -15,12 +24,29 @@ const Focus = () => {
       </FocusContainer>
       <FocusTag className="pieceInfoContainer">
         <div className="pieceInfo">
-          <h3>{pieceData.name}</h3>
-          <h4>{pieceData.artist}</h4>
-          <h4>{pieceData.description}</h4>
-          <h4>
-            {pieceData.forSale ? 'Price: $' + pieceData.price : 'Not for Sale'}
-          </h4>
+          <div className="pieceInfo-top">
+            <h4>{pieceData.title}</h4>
+            {pieceData.forSale ? (
+              <div className='btn-box'>
+              <span className="btn-group">
+                <a className="filter" onClick={contactSeller}>
+                  Contact Seller
+                </a>
+              </span>
+              </div>
+            ) : (
+              <span />
+            )}
+          </div>
+          <div className="pieceInfo-bottom">
+            <p>{pieceData.artist}</p>
+            <p>
+              {pieceData.forSale
+                ? 'Price: $' + pieceData.price
+                : 'Not for Sale'}
+            </p>
+            <p>{pieceData.description}</p>
+          </div>
         </div>
       </FocusTag>
     </>
