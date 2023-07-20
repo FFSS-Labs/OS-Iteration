@@ -5,6 +5,8 @@ import Gallery from '../components/Gallery.jsx';
 import FilterButtons from '../components/FilterButtons.jsx';
 import { StoreContext } from './dataStore.js';
 import backgrounds from '../components/Backgrounds.js';
+import Focus from '../components/Focus.jsx';
+import FocusBackground from '../components/FocusBackground.jsx';
 
 // import fakeData from '../components/Placeholder.jsx';
 
@@ -105,7 +107,7 @@ const Home = () => {
     }
     appContainer.classList.add('palette' + palette);
     console.log('Current clases: ', appContainer.classList);
-  }, [palette]);
+  }, [pallet]);
 
   return (
     <div className="base-container">
@@ -150,6 +152,8 @@ const Home = () => {
       <button onClick={() => nav('signin', { state: 'data' })}>
         Sign in here!
       </button> */}
+      <FocusBackground />
+      <Focus />
     </div>
   );
 };
