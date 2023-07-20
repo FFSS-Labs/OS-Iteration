@@ -103,7 +103,7 @@ const SignIn = () => {
 
   //use inputValue to fetch for user database
   return (
-    <div className="signin-container" style={{ backgroundImage: `url(${womanImg})` }}>
+    <div className="signin-container">
       <div className="signin-form">
         <form className="signup-textbox" onSubmit={handleSubmit}>
           {isSignUp && (
