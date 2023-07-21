@@ -470,6 +470,7 @@ $fontpick: 'Merriweather', serif;
   @extend #app-container;
   --b-color: rgb(228, 35, 190);
   --b-color-light: rgb(228, 35, 190);
+  --b-color-mid: rgb(228, 35, 190);
   --container-color: rgb(86, 132, 132);
   $fontpick: 'Trebuchet';
   h1 {
@@ -484,6 +485,7 @@ $fontpick: 'Merriweather', serif;
   @extend #app-container;
   --b-color: rgb(20, 150, 47);
   --b-color-light: rgba(34, 184, 67, 0.7);
+  --b-color-mid: rgba(34, 184, 67, 0.7);
   --container-color: rgba(205, 205, 135, 0.4);
   --page-color: light-pink;
 }
@@ -492,5 +494,6 @@ $fontpick: 'Merriweather', serif;
   @extend #app-container;
   --b-color: rgba(20, 20, 20, 0.8);
   --b-color-light: rgba(80, 80, 80, 0.7);
+  --b-color-mid: rgba(80, 80, 80, 0.7);
   --container-color: rgba(220, 220, 220, 0.8);
 }
