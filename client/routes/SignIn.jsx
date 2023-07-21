@@ -149,7 +149,7 @@ const SignIn = () => {
               Password:
             </label>
             <input
-              type="text"
+              type="password"
               id="password"
               value={password}
               onChange={handlePwChange}
